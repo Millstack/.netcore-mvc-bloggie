@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@* for adding request tag: project_name - folder_name - add_tag_request *@
+@model Bloggie.Web.Models.ViewModels.AddTagRequest
+
+@{
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h3>Add New Tag - Admin Functionality</h3>
+    </div>
+</div>
+
+<div class="container col-md-4 mx-auto rounded-3 shadow-lg py-5 mt-5">
+    <div class="container">
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" asp-for="Name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Display Name</label>
+                <input type="text" class="form-control" id="displayName" asp-for="DisplayName">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Save</button>
+        </form>
+    </div>
+</div>
