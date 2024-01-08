@@ -10,8 +10,14 @@ builder.Services.AddControllersWithViews();
 // aading connection string to service
 builder.Services.AddDbContext<BloggieDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Ginie")));
 
-// adding Tag Repository to the service
+// injecting Tag Repository to the service
 builder.Services.AddScoped<ITagRepository, TagRepository>();
+
+// injecting BlogPost Repository to the service
+builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
+
+// injecting imageUpload Repository to the service
+builder.Services.AddScoped<IImageRepository, CloudinaryImageRepository>();
 
 var app = builder.Build();
 

@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Bloggie.Web.Models.Domain.BlogPost>
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h3>Get All BlogPost - Admin Functionality</h3>
+    </div>
+</div>
+
+<div class="container py-5 ">
+    <div class="container col-md-12 mx-auto">
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-bordered shadow-sm">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">Heading</th>
+                        <th scope="col">Page Title</th>
+                        <th scope="col">Short Description</th>
+                        <th scope="col">Published Date</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Tags</th>
+                        <th scope="col" class="text-center">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var blogPost in Model)
+                    {
+                        <tr>
+                            <td>@blogPost.Heading</td>
+                            <td>@blogPost.PageTitle</td>
+                            <td>@blogPost.ShortDescription</td>
+                            <td>@blogPost.PublishedDate</td>
+                            <td>@blogPost.Author</td>
+                            <td>
+                                <div class="d-flex">
+                                    @foreach(var tags in blogPost.Tags){
+                                        <span class="badge bg-secondary me-1">@tags.Name</span>
+                                    }
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <a asp-area="" asp-controller="AdminBlogPosts" asp-action="Edit" asp-route-id="@blogPost.ID">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No BlogPosts were found !</p>
+        }
+    </div>
+</div>
