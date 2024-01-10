@@ -8,6 +8,7 @@ C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Bloggie.Web.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Bloggie.Web.pdb
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\CloudinaryDotNet.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Humanizer.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
@@ -28,6 +29,7 @@ C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Microsoft.Identi
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\System.Drawing.Common.dll
@@ -73,5 +75,3 @@ C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\obj\Debug\net7.0\refint\Bloggie.W
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\obj\Debug\net7.0\Bloggie.Web.pdb
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\obj\Debug\net7.0\Bloggie.Web.genruntimeconfig.cache
 C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\obj\Debug\net7.0\ref\Bloggie.Web.dll
-C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\CloudinaryDotNet.dll
-C:\Users\DELL\source\repos\Bloggie\Bloggie.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
