@@ -2,11 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model List<Bloggie.Web.Models.Domain.BlogPost>;
+@model Bloggie.Web.Models.ViewModels.HomeViewModel;
 
-<div action="container col-xxl-8 px-4 py-5">
-
-    <!-- Hero Section -->
+<!-- Hero Section -->
+<div class="container col-xxl-11 mb-3 px-4 py-5">
     <div class="row align-items-center g-5 py-5">
         <div class="col-12 col-lg-6">
             <h3 class="display-5 fw-bold lh-1 mb-3">
@@ -19,24 +18,40 @@
         </div>
 
         <div class="col-12 col-lg-6">
-            <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600" 
-            alt="Blog" class="d-block mx-lg-auto img-fluid" width="300"/>
+            <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600"
+                 alt="Blog" class="d-block mx-lg-auto img-fluid" width="300" />
         </div>
     </div>
 </div>
 
-<div class="container">
+<!-- Displaying Tags -->
+<div class="container mb-3">
     <div class="row justify-content-center">
         <div class="col-6">
-            @if(Model != null && Model.Any())
+            @if(Model != null && Model.Tags.Any())
             {
-                @foreach (var blogPost in Model)
+                @foreach (var tag in Model.Tags)
+                {
+                    <span class="badge bg-secondary me-2 py-2">@tag.Name</span>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<!-- All Blog References -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 shadow">
+            @if (Model != null && Model.BlogPosts.Any())
+            {
+                @foreach (var blogPost in Model.BlogPosts)
                 {
                     <div class="mb-5 bg-light box-shadow p-2">
                         <img src="@blogPost.FeaturedImageUrl" alt="@blogPost.Heading" class="mb-2 d-block img-fluid" />
                         <h2 class="mb-4">@blogPost.Heading</h2>
                         <p class="mb-4">
-                            Author: @blogPost.Author <br/>
+                            Author: @blogPost.Author <br />
                             Published Date: @blogPost.PublishedDate.ToShortDateString()
                         </p>
                         <p class="mb-4">
@@ -47,8 +62,8 @@
                         </p>
                         <p class="mb-4">@blogPost.ShortDescription</p>
 
-                        <a class="btn btn-dark" asp-area="" asp-controller="Blogs" 
-                        asp-action="Index" asp-route-urlHandle="@blogPost.UrlHandle">Read More</a>
+                        <a class="btn btn-dark" asp-area="" asp-controller="Blogs"
+                           asp-action="Index" asp-route-urlHandle="@blogPost.UrlHandle">Read More</a>
                     </div>
                 }
             }
@@ -59,4 +74,3 @@
         </div>
     </div>
 </div>
-    
