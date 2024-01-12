@@ -15,6 +15,17 @@ builder.Services.AddDbContext<BloggieDbContext>(options => options.UseSqlServer(
 builder.Services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("BloggieAuthDbConnectionString")));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
+// identity options
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // changing default settings
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+});
 
 // injecting Tag Repository to the service
 builder.Services.AddScoped<ITagRepository, TagRepository>();
