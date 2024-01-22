@@ -3,6 +3,7 @@ using Bloggie.Web.Data;
 using Bloggie.Web.Models.Domain;
 using Bloggie.Web.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Bloggie.Web.Repository
 {

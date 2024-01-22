@@ -52,7 +52,7 @@ namespace Bloggie.Web.Data
                 }
             };
 
-            // upon execut, this roles will be seeded into database bt EF
+            // upon execution, this roles will be seeded into database bt EF
             builder.Entity<IdentityRole>().HasData(roles);
 
 

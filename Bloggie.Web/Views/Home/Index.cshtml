@@ -27,7 +27,7 @@
 <!-- Displaying Tags -->
 <div class="container mb-3">
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-7">
             @if(Model != null && Model.Tags.Any())
             {
                 @foreach (var tag in Model.Tags)
@@ -42,7 +42,7 @@
 <!-- All Blog References -->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-6 shadow">
+        <div class="col-7 pt-2 shadow">
             @if (Model != null && Model.BlogPosts.Any())
             {
                 @foreach (var blogPost in Model.BlogPosts)

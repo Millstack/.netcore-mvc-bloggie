@@ -36,6 +36,9 @@ builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
 // injecting imageUpload Repository to the service
 builder.Services.AddScoped<IImageRepository, CloudinaryImageRepository>();
 
+// injecting blog-post like Repository to the service
+builder.Services.AddScoped<IBlogPostLikeRepository, BlogPostLikeRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
