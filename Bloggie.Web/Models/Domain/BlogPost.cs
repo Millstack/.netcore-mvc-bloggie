@@ -19,5 +19,8 @@
 
         // one to many
         public ICollection<BlogPostLike> Likes { get; set; }
+
+        // one blog post has multiple comments
+        public ICollection<BlogPostComment> blogPostComment { get; set; }
     }
 }
