@@ -63,7 +63,12 @@ namespace Bloggie.Web.Controllers
 
                 foreach(var blogComment in blogCommentsDomainModel)
                 {
-
+                    blogCommentForView.Add(new BlogComment()
+                    {
+                        Description = blogComment.Description,
+                        DateAdded = blogComment.DateAdded,
+                        UserName = (await userManager.FindByIdAsync(blogComment.UserID.ToString())).UserName,
+                    });
                 }
 
                 blogPostLikeViewModel = new BlogDetailsViewModel()
@@ -81,7 +86,7 @@ namespace Bloggie.Web.Controllers
                     Tags = blogPost.Tags,
                     TotalLikes = totalLikes,
                     Liked = liked,
-                    //Comments = blogCommentForView,
+                    Comments = blogCommentForView,
                 };
             }
 
@@ -96,7 +101,7 @@ namespace Bloggie.Web.Controllers
                 var domainModel = new BlogPostComment()
                 {
                     BlogPostID = blogDetailsViewModel.ID,
-                    Description = blogDetailsViewModel.COmmentDescription,
+                    Description = blogDetailsViewModel.CommentDescription,
                     UserID = Guid.Parse(userManager.GetUserId(User)),
                     DateAdded = DateTime.Now,
                 };
