@@ -39,6 +39,7 @@ builder.Services.AddScoped<IImageRepository, CloudinaryImageRepository>();
 // injecting blog-post like Repository to the service
 builder.Services.AddScoped<IBlogPostLikeRepository, BlogPostLikeRepository>();
 builder.Services.AddScoped<IBlogPostCommentRepository, BlogPostCommentRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
