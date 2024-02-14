@@ -34,6 +34,14 @@ namespace Bloggie.Web.Controllers
             // model binding
             //var name = addTagRequest.Name;
 
+            // custom validation message
+            ValidateAddtagRequest(addTagRequest);
+
+            if (ModelState.IsValid == false)
+            {
+                return View();
+            }
+
             var tag = new Tag()
             {
                 Name = addTagRequest.Name,
@@ -119,6 +127,19 @@ namespace Bloggie.Web.Controllers
 
             // showing error nitification
             return RedirectToAction("Edit", new { id = editTagRequest.ID });
+        }
+
+
+        // custom validation message
+        private void ValidateAddtagRequest(AddTagRequest addTagRequest)
+        {
+            if(addTagRequest.Name != null && addTagRequest.DisplayName != null)
+            {
+                if(addTagRequest.Name == addTagRequest.DisplayName)
+                {
+                    ModelState.AddModelError("DisplayName", "tag Display name cannot be same as Tag Name");
+                }
+            }
         }
     }
 }

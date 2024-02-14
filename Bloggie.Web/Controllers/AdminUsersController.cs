@@ -43,7 +43,6 @@ namespace Bloggie.Web.Controllers
         }
 
         [HttpPost]
-
         public async Task<IActionResult> List(UserViewModel userViewModel)
         {
             var identityUser = new IdentityUser()
@@ -72,6 +71,24 @@ namespace Bloggie.Web.Controllers
                     {
                         return RedirectToAction("List", "AdminUsers");
                     }
+                }
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var user = await userManager.FindByIdAsync(id.ToString());
+
+            if (user != null)
+            {
+                var identityResult = await userManager.DeleteAsync(user);
+
+                if(identityResult != null && identityResult.Succeeded)
+                {
+                    return RedirectToAction("List", "AdminUsers");
                 }
             }
 
